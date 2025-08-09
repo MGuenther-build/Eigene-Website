@@ -1,0 +1,39 @@
+
+.home-icon {
+  width: 3em; /* Containerweite */
+  display: block;
+}
+.icon {
+  width: 3em;
+  height: auto;
+  display: block;
+}
+.icon:active {
+  transform: scale(0.88);
+}
+
+
+
+@keyframes PicZoom {
+  0% {
+    filter: blur(5em);
+    transform: scale(0.0);
+    opacity: 0;
+  }
+  40% {
+    filter: blur(3em);
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}
+.portrait-zoom {
+  max-width: 17em;
+  height: auto;
+  animation: PicZoom 3.5s ease forwards;
+  transform-origin: 0% 50%;
+}

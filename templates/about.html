@@ -1,0 +1,130 @@
+
+<!-- templates/index.html -->
+{% extends "index.html" %}
+
+{% block title %}Über mich{% endblock %}
+
+{% block content %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<div class="swiper HomeAboutSwiper">
+    <div class="swiper-wrapper HomeAboutWrapper" style="font-family: 'Agency FB'; font-weight: bold;">
+        <div class="swiper-slide HomeAboutSlide">
+
+            <h1 class="zoom-in-cutted" style="
+                text-align: center;
+                color: rgba(236, 236, 236);
+                font-family: 'Agency FB';
+                font-weight: bold;
+                font-size: 3em;
+                text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
+                                0 0 0.2em rgba(167, 90, 214, 0.3),
+                                0 0 0.2em rgba(127, 32, 229, 0.2),
+                                0 0 0.1em rgba(97, 13, 170, 0.6);">
+                About me
+            </h1>
+
+
+            <img src="{{ url_for('static', filename='photo.png') }}"
+            style="background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.15) 33%,
+                rgba(0, 0, 0, 0.25) 50%,
+                rgba(28, 1, 33, 0.35) 66%,
+                rgba(53, 6, 61, 0.4) 100%
+                );
+                box-shadow: 1.25em 0 2.5em rgba(75, 126, 196, 0.6);
+                border-radius: 50%;
+                margin-left: 2.25em;
+                padding: 0.65em;
+                "
+            class="portrait-zoom"
+            alt="Portraitbild"
+            loading="lazy"/>
+        </div>
+
+        <div class="swiper-slide HomeAboutSlide">
+            <div class="zoom-in-cutted">
+                <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                    <h1 style="
+                        margin: 0;
+                        color: rgba(236, 236, 236);
+                        font-family: 'Agency FB';
+                        font-weight: bold;
+                        font-size: 2em;
+                        text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
+                                        0 0 0.2em rgba(167, 90, 214, 0.3),
+                                        0 0 0.2em rgba(127, 32, 229, 0.2),
+                                        0 0 0.25em rgba(97, 13, 170, 0.6);">
+                        Das Leben ist ein Meer
+                    </h1>
+                </div>
+                <div>
+                    <p class="zoom-in-slowed" style>
+                        aaaegfhfggggdfmgkglklgeglngjggkgk<br>wlfkergmgigeritueeijfighrigsicns<br>ajfw95u493ueuhKSKSKACNAK
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper(".HomeAboutSwiper", {
+        speed: 900,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        keyboard: {
+            enabled: false,
+            onlyInViewport: true,
+        },
+    });
+
+    // Neu-Triggerung des zoom-in-cutted
+    swiper.on('slideChangeTransitionStart', () => {
+        document.querySelectorAll('.zoom-in-cutted').forEach(el => {
+            el.classList.remove('zoom-in-cutted');
+            void el.offsetWidth;
+            el.classList.add('zoom-in-cutted');
+        });
+    });
+
+    // Neu-Triggerung des zoom-in-slowed
+    swiper.on('slideChangeTransitionStart', () => {
+        document.querySelectorAll('.zoom-in-slowed').forEach(el => {
+            el.classList.remove('zoom-in-slowed');
+            void el.offsetWidth;
+            el.classList.add('zoom-in-slowed');
+        });
+    });
+
+    // Neu-Triggerung des portrait-zoom
+    swiper.on('slideChangeTransitionStart', () => {
+        document.querySelectorAll('.portrait-zoom').forEach(el => {
+            el.classList.remove('portrait-zoom');
+            void el.offsetWidth;
+            el.classList.add('portrait-zoom');
+        });
+    });
+
+    // Nur Pfeiltasten links/rechts für swipe
+    window.addEventListener('keydown', (e) => {
+        if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+            if (e.key === 'ArrowLeft') {
+                swiper.slidePrev();
+            } else if (e.key === 'ArrowRight') {
+                swiper.slideNext();
+            }
+        }
+    });
+</script>
+{% endblock %}

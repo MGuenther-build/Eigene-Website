@@ -1,0 +1,59 @@
+
+<!-- index.html - für Layout, Sidebar und Navigation aller Seiten -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='Favicon.png') }}" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MGuenther-dev{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pics.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    {% if layout_mode != 'minimal' %}
+
+    {% if request.args.get('fadein') %}
+        <nav id="topbar" class="topbar fade-in">
+        {% else %}
+        <nav id="topbar" class="topbar">
+    {% endif %}
+
+        <div class="home-icon">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='Logo.png') }}" class="icon" alt="Home" title="Startseite">
+            </a>
+        </div>
+        <ul class="menu">
+            <li><a href="{{ url_for('about') }}" class="{% if active_page == 'about' %}active current{% endif %}">About</a></li>
+            <li><a href="{{ url_for('contact') }}" class="{% if active_page == 'contact' %}active current{% endif %}">Kontakt</a></li>
+            <li><a href="{{ url_for('portfolio') }}" class="{% if active_page == 'portfolio' %}active current{% endif %}">Portfolio</a></li>
+            <li><a href="{{ url_for('impressum') }}" class="{% if active_page == 'impressum' %}active current{% endif %}">Impressum</a></li>
+            <li><a href="https://github.com/MGuenther-build" target="_blank" title="mein Github-Account">
+                <span style="margin-left:6px;">🗗&nbsp; Github</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    {% else %}
+    {% endif %}
+
+    <div class="main-wrapper fade-in">
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const topbar = document.getElementById('topbar');
+        if (topbar && topbar.classList.contains('fade-in')) {
+            setTimeout(() => {
+                topbar.classList.add('visible');
+            }, 50);
+        }
+    });
+</script>
+</body>
+</html>

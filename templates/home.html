@@ -1,0 +1,82 @@
+
+<!-- templates/index.html -->
+{% extends "index.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<div class="swiper HomeAboutSwiper">
+    <div class="swiper-wrapper HomeAboutWrapper" style="font-family: 'Agency FB'; font-weight: bold;">
+        <div class="swiper-slide HomeAboutSlide">
+            <h1 class="zoom-in" style="
+                color: rgba(236, 236, 236);
+                font-size: 4.5em;
+                font-family: 'Agency FB';
+                font-weight: bold;
+                text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
+                                0 0 0.2em rgba(167, 90, 214, 0.3),
+                                0 0 0.2em rgba(127, 32, 229, 0.2),
+                                0 0 0.1em rgba(97, 13, 170, 0.6);">
+                Willkommen
+            </h1>
+        </div>
+
+        <div class="swiper-slide HomeAboutSlide">
+            <p class="zoom-in-cutted">
+                Texewfgfdsdf<br>wqefkfegergrej4u4t3t54theji<br>qwijroi34ru34eij129i43jfndjkdd<br>qijweiofjeroferngergnijre
+            </p>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper(".HomeAboutSwiper", {
+        speed: 900,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        keyboard: {
+            enabled: false,
+            onlyInViewport: true,
+        },
+    });
+
+    // Neu-Triggerung des zoom-in
+    swiper.on('slideChangeTransitionStart', () => {
+        document.querySelectorAll('.zoom-in').forEach(el => {
+            el.classList.remove('zoom-in');
+            void el.offsetWidth;
+            el.classList.add('zoom-in');
+        });
+    });
+    
+    // Neu-Triggerung des zoom-in-cutted
+    swiper.on('slideChangeTransitionStart', () => {
+        document.querySelectorAll('.zoom-in-cutted').forEach(el => {
+            el.classList.remove('zoom-in-cutted');
+            void el.offsetWidth;
+            el.classList.add('zoom-in-cutted');
+        });
+    });
+
+    // Nur Pfeiltasten links/rechts für swipe
+    window.addEventListener('keydown', (e) => {
+        if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+            if (e.key === 'ArrowLeft') {
+                swiper.slidePrev();
+            } else if (e.key === 'ArrowRight') {
+                swiper.slideNext();
+            }
+        }
+    });
+</script>
+{% endblock %}

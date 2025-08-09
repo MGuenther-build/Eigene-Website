@@ -1,0 +1,104 @@
+
+<!-- templates/contact.html -->
+{% extends "index.html" %}
+
+{% block title %}Kontakt{% endblock %}
+
+{% block content %}
+<section id="kontakt" class="contact-form">
+    <h2>Kontakt</h2>
+    <form id="KontaktID" action="#" method="post">
+        <label for="betreff">Betreff</label>
+        <input type="text" id="betreff" name="betreff" required>
+
+        <label for="thema">Wählen Sie ein Thema</label>
+        <select id="thema" name="thema" required>
+            <option value="anfrage">Allgemeine Anfrage</option>
+            <option value="feedback">Feedback</option>
+            <option value="support">Support-Anfrage</option>
+            <option value="sonstiges">Sonstiges</option>
+        </select>
+
+        <label style="margin-bottom: 0.175em;" for="nachricht">Nachricht</label>
+        <div id="zeichenzaehler" style="margin-bottom: 0.75em; font-size: 0.8em; font-weight: 300; color: #dcd3d3ff;"></div>
+        <textarea id="nachricht" name="nachricht" rows="12" required></textarea>
+
+        <button type="submit" id="sendButtonAnimation">Absenden</button>
+    </form>
+</section>
+
+
+
+<!-- für grünen gesendet Button -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("KontaktID");
+        const button = document.getElementById("sendButtonAnimation");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            fetch("/contact", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    button.classList.add("sent");
+                    button.textContent = "Gesendet";
+                    button.disabled = true;
+            } else {
+                    button.textContent = "Fehler!";
+                    button.style.backgroundColor = "rgba(186, 45, 45, 0.85)";
+                    }
+            });
+        });
+
+        /* für Zurücksetzen gesendet Button, wenn Nachrichtfeld geleert */
+        const textarea = document.getElementById("nachricht");
+        textarea.addEventListener("input", function () {
+            const isEmpty = textarea.value.trim() === "";
+            if (!isEmpty) {
+                button.classList.remove("sent");
+                button.textContent = "Absenden";
+                button.disabled = false;
+            }
+        });
+
+        /* Formular leeren beim Verlassen der Seite */
+        window.addEventListener("beforeunload", function () {
+            form.reset();
+            button.classList.remove("sent");
+            button.textContent = "Absenden";
+            button.disabled = false;
+        });
+    });
+</script>
+
+
+
+<!-- für maximale Anzahl Wörter (andere Teil in Backend!) -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const maxZeichen = {{ max_Zeichen }};
+        const textarea = document.getElementById("nachricht");
+        const counter = document.getElementById("zeichenzaehler");
+
+        function updateCounter() {
+            const text = textarea.value;
+            const remaining = maxZeichen - text.length;
+
+            if (remaining < 0) {
+                textarea.value = text.substring(0, maxZeichen);
+                counter.textContent = "0 Zeichen verbleibend";
+            } else {
+                counter.textContent = `= ${remaining} Zeichen verbleibend`;
+            }
+        }
+        textarea.addEventListener("input", updateCounter);
+        updateCounter();
+    });
+</script>
+
+{% endblock %}

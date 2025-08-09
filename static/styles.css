@@ -1,0 +1,544 @@
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* verhindert Anklickbarkeit aktiver Seite */
+.current {
+  pointer-events: none;
+  cursor: default;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium';
+  color: #ececec;
+  background: url('../static/Wallpaper.png') no-repeat center center fixed;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Container für den Hauptinhalt, umschließt main */
+.main-wrapper {
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Container für den Seiteninhalt */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 1em;
+  color: white;
+  text-shadow: 0.06em 0.08em rgba(93, 22, 137, 0.9);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.software-link {
+  text-decoration: none;
+  color: #c0c1f3;
+}
+.software-link:hover {
+  color: #6e70df;
+}
+
+
+
+/* Zoom Effekt Startseite Seite 1 */
+@keyframes ZoomZoom {
+  0% {
+    transform: scale(0.0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(0.15);
+    opacity: 0.15;
+  }
+  75% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.zoom-in {
+  animation: ZoomZoom 3.0s ease-out forwards;
+}
+
+
+
+/* Zoom Effekt Start Seite 2/About Seite 1 und Seite 2(aber nur H1) */
+@keyframes ZoomZoom2 {
+  0% {
+    transform: scale(0.0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(0.1);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.zoom-in-cutted {
+  animation: ZoomZoom2 2.0s ease-out forwards;
+}
+
+
+
+/* Zoom Effekt About Seite 2 (p-Schrift) */
+@keyframes ZoomZoom3 {
+  0% {
+    transform: scale(0.0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(0.3);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.zoom-in-slowed {
+  animation: ZoomZoom3 3.0s ease-out forwards;
+}
+
+
+
+/* Zoom Effekt für Portfolio */
+@keyframes ZoomZoom4 {
+  0% {
+    transform: scale(0.0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.zoom-in-port {
+  animation: ZoomZoom4 2.5s ease-out forwards;
+}
+
+
+
+.topbar {
+  position: relative;
+  margin: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: linear-gradient(
+    to right,
+    rgba(114, 104, 225, 0.15) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.3) 70%,
+    rgba(124, 118, 197, 0.1) 100%
+  );
+  backdrop-filter: blur(0.1em);
+  -webkit-backdrop-filter: blur(0.1em);
+  border-radius: 0.2em;
+  height: 8vh !important;
+  overflow: hidden;
+}
+
+.topbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar li a {
+  color: #e3e2e2;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 8vh 11vh;
+}
+
+.topbar li a:hover {
+  background-color: rgba(126, 60, 206, 0.6);
+  color: #ffffff;
+  transition: background-color 1.0s ease;
+}
+
+.topbar li a:active {
+  background-color: rgba(186, 45, 45, 0.5);
+  transition: color 1.5s ease-out;
+}
+
+.topbar a.active {
+  color: #7e3cce;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 2.0s ease-in;
+}
+/* für die Reiter in der Topbar (außer Startseiten-Icon) in der index.html */
+.menu {
+  display: block;
+  list-style: none;
+}
+/* für zurück in den Projektansichten */
+.back {
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Agency FB";
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  color: #ececec;
+  text-shadow:    0 0 0.25em rgba(164, 41, 230, 0.3),
+                  0 0 0.25em rgba(167, 90, 214, 0.3),
+                  0 0 0.25em rgba(127, 32, 229, 0.2),
+                  0 0 0.25em rgba(97, 13, 170, 0.6);
+}
+.back:hover {
+  color: #ffffff;
+}
+.back:active {
+  transform: scale(0.96);
+}
+
+
+
+
+/*Design für Kontaktformular*/
+.contact-form {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  box-shadow: 0.25em 0.75em 1.5em 0.5em rgba(107, 143, 221, 0.6);
+  width: 60%;
+  margin: 9vh auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-bottom: 1.25em;
+}
+
+.contact-form:hover {
+  box-shadow: 0.25em 1.15em 1.9em 0.75em rgba(107, 143, 221, 0.8);
+}
+
+.contact-form h2 {
+  font-size: 2em;
+  margin-bottom: 0.925em;
+  color: #ffffff;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.625em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9em;
+  margin-bottom: 1.5em;
+  background-color: #e8e8e8;
+  border: 0.1em solid #ffffff;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  background-color: rgba(126, 60, 206, 0.8);
+  color: #ffffff;
+  border: none;
+  padding: 0.625em 1.25em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+
+.contact-form button:hover {
+  background-color: rgba(186, 45, 45, 0.7);
+}
+
+.contact-form button:active {
+  transform: translateY(0.15em);
+  box-shadow: inset 0 0.15em 0.25em rgba(0, 0, 0, 0.3);
+}
+
+.contact-form button.sent {
+  background-color: rgba(76, 175, 80, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button.sent::after {
+  content: " ✓";
+  font-weight: bold;
+}
+
+
+
+/*Design für Portfolio*/
+.portfolio-kacheln {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 6.25em 6.25em;
+  margin-left: 6.25em;
+  margin-right: 6.25em;
+}
+
+.card {
+  background: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.4),
+    rgba(28, 1, 33, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(164, 107, 175, 0.3),
+    rgba(0, 0, 0, 0.4)
+  );
+  box-shadow: 0.25em 0.65em 1.25em 0.25em rgba(132, 124, 237, 0.3);
+  border-radius: 0.25em;
+  padding: 1.25em;
+  text-align: center;
+  transition: transform 0.8s ease;
+}
+
+.card:hover {
+  background: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(28, 1, 33, 0.4),
+    rgba(255, 255, 255, 0.3),
+    rgba(164, 107, 175, 0.4),
+    rgba(0, 0, 0, 0.5)
+  );
+  box-shadow: 0.25em 0.75em 1.5em 0.5em rgba(107, 143, 221, 0.6);
+  transform: scale(1.05);
+}
+
+.card:active {
+  background: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(28, 1, 33, 0.4),
+    rgba(255, 255, 255, 0.3),
+    rgba(186, 45, 45, 0.4),
+    rgba(0, 0, 0, 0.5)
+  );
+  box-shadow: 0.25em 0.75em 1.5em 0.5em rgba(186, 45, 45, 0.6);
+}
+
+.card img {
+  width: 90%;
+  height: auto;
+  border-radius: 0.65em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+.card h2 a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card p {
+  color: #ececec;
+}
+
+.card p:hover {
+  color: #ffffff;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+/* Für Projektseiten */
+.projektdetails {
+  background: transparent;
+  text-align: center;
+  overflow: hidden;
+}
+.slideshow-EJApp {
+  width: 75%;
+  height: 75%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 7.5em 1.25em rgba(163, 63, 224, 0.5);
+}
+.slideshow-WApp {
+  width: 90%;
+  height: auto;
+  border-radius: 0.5em;
+  box-shadow: 0 0.65em 2.5em 1.25em rgba(117, 165, 234, 0.3);
+}
+
+
+.fade-in {
+  filter: blur(1em);
+  opacity: 0;
+  will-change: filter, opacity;
+  transition: filter 1.8s ease, opacity 1.8s ease;
+}
+.fade-in.visible {
+  filter: blur(0);
+  opacity: 1;
+  transition: filter 1.8s ease, opacity 1.8s ease;
+}
+.fade-out {
+  filter: blur(0);
+  opacity: 1;
+  will-change: filter, opacity;
+  transition: filter 1.8s ease, opacity 1.8s ease;
+}
+.fade-out.start {
+  filter: blur(1em);
+  opacity: 0;
+}
+
+
+
+
+#slide-effekt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(28, 1, 33, 0.4),
+    rgba(255, 255, 255, 0.3),
+    rgba(164, 107, 175, 0.4),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 999;
+  overflow: hidden;
+  transition: transform 2.0s ease-out;
+}
+.slide-links-rechts {
+  transform: translateX(-100vw);
+}
+.slide-rechts-links {
+  transform: translateX(100vw);
+}
+/* Zielposition */
+.slide-in {
+  transform: translateX(0);
+}
+
+
+
+/*Swiper.JS allgemein*/
+.swiper {
+  position: relative;
+  max-width: 75%;
+  background: transparent;
+  overflow: hidden;
+  z-index: 1;
+}
+.swiper-wrapper {
+  display: flex;
+  position: relative;
+  padding-bottom: 3vh;
+  z-index: 1;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+.swiper-slide {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2em;
+  flex-shrink: 0;
+  overflow: visible;
+}
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet {
+  background: #7e3cce !important;
+  width: 2em !important;
+  height: 1em !important;
+  margin: 0 0.5em !important;
+  border-radius: 50%;
+  transition: all 1.0s ease;
+}
+
+
+
+/* Swiper für Startseite & About */
+.swiper.HomeAboutSwiper {
+  display: flex;
+  position: relative;
+  width: 70%;
+  height: 70vh;
+  overflow: hidden;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 6.25vh;
+  background: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(28, 1, 33, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(164, 107, 175, 0.3),
+    rgba(0, 0, 0, 0.4)
+  );
+  border-radius: 0.5em;
+}
+
+.swiper-wrapper.HomeAboutWrapper {
+  display: flex;
+  position: relative;
+  border-radius: 0.25em;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+.swiper-slide.HomeAboutSlide {
+  display: flex;
+  flex-shrink: 0;
+  font-size: 1.2em;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}

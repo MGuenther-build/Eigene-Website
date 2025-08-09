@@ -1,0 +1,96 @@
+
+<!-- templates/portfolio.html -->
+{% extends "index.html" %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+<div id="slide-effekt" class="slide-links-rechts"></div>
+<h1 class="zoom-in-port" style="
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: rgba(227, 226, 226);
+    font-family: 'Agency FB';
+    font-weight: bold;
+    font-size: 3em;
+    text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
+                    0 0 0.2em rgba(167, 90, 214, 0.3),
+                    0 0 0.2em rgba(127, 32, 229, 0.2),
+                    0 0 0.2em rgba(97, 13, 170, 0.6);">
+    Portfolio
+</h1>
+<br>
+<div class="portfolio-kacheln">
+    <div class="card">
+        <a href="{{ url_for('app1') }}" class="card-link">
+            <img src="{{ url_for('static', filename='EJApp_Front.png') }}" alt="EurojackpotApp" title="Für mehr Informationen klicken">
+        </a>
+        <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;">EurojackpotApp</h2>
+        <br>
+        <p></span><a href="https://www.mguenther-dev.de/EJApp.exe" class="software-link" title="App herunterladen">⬇️ Download (exe)</a>
+        </p>
+    </div>
+    <div class="card">
+        <a href="{{ url_for('app2') }}" class="card-link">
+        <img src="{{ url_for('static', filename='WApp_Front.png') }}" alt="WetterApp" title="Für mehr Informationen klicken">
+        </a>
+        <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;">WetterApp</h2>
+        <br>
+        <p></span><a href="https://www.mguenther-dev.de/WetterApp" class="software-link" title="App im neuen Fenster öffnen" target="_blank">🌐 öffnen</a>
+        </p>
+
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='SpielQuizApp.jpg') }}" alt="Spiel-Quiz-App">
+        <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">Spiel-Quiz-App</a></h2>
+        <p>🌐 als WebApp öffnen &nbsp; | &nbsp; ⬇️ Download (exe)</p>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='projekt4.png') }}" alt="Projekt 4">
+        <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">Hotel-Buchungssystem</a></h2>
+        <p>... in Arbeit</p>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='projekt5.png') }}" alt="Projekt 5">
+        <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">Restaurant-Buchungssystem</a></h2>
+        <p>... in Arbeit</p>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='Dark Chess (proto).png') }}" alt="Projekt 6">
+        <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">No Kings Schach</a></h2>
+        <p>... in Planung</p>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.card-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+        const overlay = document.getElementById("slide-effekt");
+        const topbar = document.getElementById("topbar");
+        overlay.className = "slide-links-rechts";
+        overlay.offsetHeight;
+        if (topbar) {
+            topbar.classList.add("fade-out");
+            setTimeout(() => {
+                topbar.classList.add("start");
+            }, 20);
+        }
+            setTimeout(() => {
+            overlay.classList.add("slide-in");
+            }, 50);
+            overlay.addEventListener('transitionend', () => {
+                window.location.href = link.href;
+            }, { once: true });
+        });
+    });
+</script>
+
+{% if request.args.get('fadein') %}
+<nav id="topbar" class="topbar fade-in">
+{% else %}
+<nav id="topbar" class="topbar">
+{% endif %}
+
+{% endblock %}

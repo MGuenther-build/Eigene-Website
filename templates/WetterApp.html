@@ -1,0 +1,176 @@
+
+<!-- templates/index.html -->
+{% extends "index.html" %}
+
+{% block title %}WetterApp{% endblock %}
+
+{% block content %}
+<div id="slide-effekt" class="slide-rechts-links"></div>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<ul class="back">
+  <li><a href="{{ url_for('portfolio') }}?fadein=1" class="back {% if active_page == 'portfolio' %}active current{% endif %}" title="zurück zum Portfolio">zurück</a></li>
+</ul>
+
+<div class="swiper">
+    <div class="swiper-wrapper" style="font-family: 'Agency FB';">
+
+        <div class="swiper-slide projektdetails">
+            <a
+                href="{{ url_for('static', filename='WApp1.png') }}" target="_blank" title="Bild öffnet im neuen Fenster">
+                <img src="{{ url_for('static', filename='WApp1.png') }}" class="slideshow-WApp" alt="WetterApp1">
+            </a>
+            <p style="
+                text-align: center;
+                background: rgba(35, 85, 160, 0.1);
+                backdrop-filter: blur(1em);
+                -webkit-backdrop-filter: blur(1em);
+                padding: 0.25em 0.75em;
+                border-radius: 0.5em;
+                display: inline-block;
+                "
+                >Eine schlanke WetterApp mit 2 Funktionen: Wetterarchiv und Wettervorhersage für 3 Tage.
+            </p>
+        </div>
+
+        <div class="swiper-slide projektdetails">
+            <a
+                href="{{ url_for('static', filename='WApp2.png') }}" target="_blank" title="Bild öffnet im neuen Fenster">
+                <img src="{{ url_for('static', filename='WApp2.png') }}" class="slideshow-WApp" alt="WetterApp2">
+            </a>
+            <p style="
+                text-align: center;
+                background: rgba(35, 85, 160, 0.1);
+                backdrop-filter: blur(1em);
+                -webkit-backdrop-filter: blur(1em);
+                padding: 0.25em 0.75em;
+                border-radius: 0.5em;
+                display: inline-block;
+                "
+                >Im Wetterarchiv einfach aus der Liste den Ort und das Datum auswählen . . .
+            </p>
+        </div>
+        
+        <div class="swiper-slide projektdetails">
+            <a
+                href="{{ url_for('static', filename='WApp3.png') }}" target="_blank" title="Bild öffnet im neuen Fenster">
+                <img src="{{ url_for('static', filename='WApp3.png') }}" class="slideshow-WApp" alt="WetterApp3">
+            </a>
+            <p style="
+                text-align: center;
+                background: rgba(35, 85, 160, 0.1);
+                backdrop-filter: blur(1em);
+                -webkit-backdrop-filter: blur(1em);
+                padding: 0.25em 0.75em;
+                border-radius: 0.5em;
+                display: inline-block;
+                "
+                >. . . und man erhält die Temperatur für den Tag und eine Grafik für das gesamte Jahr!<br>
+                Jeder Punkt auf der Grafik gibt die Temperatur für diesen Tag in diesem Jahr wieder.
+            </p>
+        </div>
+        
+        <div class="swiper-slide projektdetails">
+            <a
+                href="{{ url_for('static', filename='WApp4.png') }}" target="_blank" title="Bild öffnet im neuen Fenster">
+                <img src="{{ url_for('static', filename='WApp4.png') }}" class="slideshow-WApp" alt="WetterApp4">
+            </a>
+            <p style="
+                text-align: center;
+                background: rgba(35, 85, 160, 0.1);
+                backdrop-filter: blur(1em);
+                -webkit-backdrop-filter: blur(1em);
+                padding: 0.25em 0.75em;
+                border-radius: 0.5em;
+                display: inline-block;
+                "
+                >Die Wettervorhersage ist ebenso übersichtlich gehalten wie das Wetterarchiv!<br>
+                Einfach den Ort eingeben, schon slided das Wetter für die nächsten 3 Tage ins Bild.
+            </p>
+        </div>
+        
+        <div class="swiper-slide projektdetails">
+            <a
+                href="{{ url_for('static', filename='WApp5.png') }}" target="_blank" title="Bild öffnet im neuen Fenster">
+                <img src="{{ url_for('static', filename='WApp5.png') }}" class="slideshow-WApp" alt="WetterApp5">
+            </a>
+            <p style="
+                text-align: center;
+                background: rgba(35, 85, 160, 0.1);
+                backdrop-filter: blur(1em);
+                -webkit-backdrop-filter: blur(1em);
+                padding: 0.25em 0.75em;
+                border-radius: 0.5em;
+                display: inline-block;
+                "
+                >Drei harmonische Kacheln zeigen das Wetter für die nächsten 3 Tage.<br>
+                Die Marker der Grafiken halten weitere Wettereigenschaften bereit!
+            </p>
+        </div>
+        
+        <div class="swiper-slide projektdetails">
+            <a
+                href="{{ url_for('static', filename='WApp6.png') }}" target="_blank" title="Bild öffnet im neuen Fenster">
+                <img src="{{ url_for('static', filename='WApp6.png') }}" class="slideshow-WApp" alt="WetterApp6">
+            </a>
+            <p style="
+                text-align: center;
+                background: rgba(35, 85, 160, 0.1);
+                backdrop-filter: blur(1em);
+                -webkit-backdrop-filter: blur(1em);
+                padding: 0.25em 0.75em;
+                border-radius: 0.5em;
+                display: inline-block;
+                "
+                >Die kleinen Wettersymbole unten in den Wetterkacheln zeigen beim Darüberfahren Infos zum Wetter.
+            </p>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        keyboard: {
+            enabled: false,
+            onlyInViewport: true,
+        },
+    });
+    window.addEventListener('keydown', (e) => {
+        if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+            if (e.key === 'ArrowLeft') {
+                swiper.slidePrev();
+            } else if (e.key === 'ArrowRight') {
+                swiper.slideNext();
+            }
+        }
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.back a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const overlay = document.getElementById("slide-effekt");
+            overlay.className = "slide-rechts-links";
+            overlay.offsetHeight;
+            setTimeout(() => {
+                overlay.classList.add("slide-in");
+            }, 50);
+            overlay.addEventListener('transitionend', () => {
+                window.location.href = link.href;
+            }, { once: true });
+        });
+    });
+</script>
+
+{% endblock %}
