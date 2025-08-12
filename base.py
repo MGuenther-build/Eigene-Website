@@ -14,7 +14,7 @@ def home():
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-    maximum = 999
+    maximum = 1000
     if request.method == "POST":
         nachricht = request.form.get("nachricht", "").strip()
         zeichenanzahl = len(nachricht)
