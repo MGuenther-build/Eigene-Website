@@ -5,7 +5,17 @@
 {% block title %}Impressum{% endblock %}
 
 {% block content %}
-
+<div= style="  background: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(186, 45, 45, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
+  border-radius: 0.5em;
+  margin-top: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  margin-bottom: 4em;">
  <h1 style="
             text-align: center;
             color: rgba(236, 236, 236);
@@ -26,10 +36,10 @@
             text-align: center;
             color: white;
             font-family: 'Agency FB';
-            text-shadow:    0 0.125em 0.5em rgba(19, 4, 28, 0.3),
-                            0 0.125em 0.5em rgba(24, 5, 37, 0.3),
-                            0 0.125em 0.5em rgba(37, 16, 59, 0.2),
-                            0 0.125em 0.5em rgba(9, 1, 16, 0.6);"
+             text-shadow:    0 0 0.25em rgba(164, 41, 230, 0.3),
+                            0 0 0.25em rgba(167, 90, 214, 0.3),
+                            0 0 0.25em rgba(127, 32, 229, 0.2),
+                            0 0 0.2em rgba(97, 13, 170, 0.6);"
             >
             Webseiteninhaber:
 </h2>
@@ -48,15 +58,16 @@
 </h3>
 
 <p style="
+            margin-top: 0.5vh;
             text-align: center;
             font-family: 'Agency FB';
             font-size: 1.1em;
             color: white;"
             >
-            <b style="  text-shadow:    0 0 0.5em rgba(164, 41, 230, 0.3),
-                                        0 0 0.5em rgba(167, 90, 214, 0.3),
-                                        0 0 0.5em rgba(127, 32, 229, 0.2),
-                                        0 0 0.5em rgba(97, 13, 170, 0.6);
+            <b style="  text-shadow:    0 0 0.3em rgba(164, 41, 230, 0.3),
+                                        0 0 0.3em rgba(167, 90, 214, 0.3),
+                                        0 0 0.3em rgba(127, 32, 229, 0.2),
+                                        0 0 0.3em rgba(97, 13, 170, 0.6);
             ">
             Haftungsausschuss:</b><br>
 </p>
@@ -65,7 +76,7 @@
             font-family: 'Agency FB';
             font-size: 1.1em;
             color: white;
-            text-shadow:    0 0.1em 0.5em rgba(0, 0, 0, 0.9);">
+            text-shadow:    0 0.05em 0.05em rgba(61, 8, 108, 0.6);">
             
             <b>Haftung für Inhalte</b><br>
             Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich keine Gewähr übernehmen.<br>
@@ -93,5 +104,6 @@
             Es ist ausdrücklich nicht erwünscht, dass über die im Impressum veröffentlichten Kontaktdaten Werbung ("Spam") übermittelt wird!<br>
             <br>
 </p>
+</div>
  
 {% endblock %}

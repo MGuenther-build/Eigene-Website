@@ -135,7 +135,7 @@ p {
   }
 }
 .zoom-in-port {
-  animation: ZoomZoom4 2.5s ease-out forwards;
+  animation: ZoomZoom4 3.0s ease-out forwards;
 }
 
 
@@ -199,7 +199,7 @@ p {
 }
 /* für zurück in den Projektansichten */
 .back {
-  display: block;
+  display: inline-block;
   list-style: none;
   text-decoration: none;
   text-align: center;
@@ -404,18 +404,18 @@ p {
   filter: blur(1em);
   opacity: 0;
   will-change: filter, opacity;
-  transition: filter 1.8s ease, opacity 1.8s ease;
+  transition: filter 1.5s ease-in, opacity 1.5s ease-in;
 }
 .fade-in.visible {
   filter: blur(0);
   opacity: 1;
-  transition: filter 1.8s ease, opacity 1.8s ease;
+  transition: filter 1.5s ease-in, opacity 1.5s ease-in;
 }
 .fade-out {
   filter: blur(0);
   opacity: 1;
   will-change: filter, opacity;
-  transition: filter 1.8s ease, opacity 1.8s ease;
+  transition: filter 1.5s ease-in, opacity 1.5s ease-in;
 }
 .fade-out.start {
   filter: blur(1em);
@@ -559,7 +559,7 @@ p {
   background: linear-gradient(
     30deg,
     rgba(0, 0, 0, 0.2),
-    rgba(164, 107, 175, 0.25),
+    rgba(77, 32, 96, 0.3),
     rgba(237, 234, 234, 0.2),
     rgba(164, 107, 175, 0.3),
     rgba(0, 0, 0, 0.4)

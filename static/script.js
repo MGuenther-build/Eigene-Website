@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // Nach Timeout zur neuen Seite wechseln
         setTimeout(() => {
           window.location.href = target;
-        }, 1850); // Zeit muss zum CSS passen + etwas Puffer
+        }, 1600); // Zeit muss zum CSS passen + etwas Puffer
       }
     });
   });
