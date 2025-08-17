@@ -27,7 +27,13 @@ body {
 .main-wrapper {
   height: auto;
   box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
 }
+.main-wrapper.visible {
+  opacity: 1;
+}
+
 
 /* Container für den Seiteninhalt */
 .content {
@@ -152,7 +158,7 @@ p {
     rgba(114, 104, 225, 0.15) 0%,
     rgba(0, 0, 0, 0.3) 30%,
     rgba(0, 0, 0, 0.3) 70%,
-    rgba(124, 118, 197, 0.1) 100%
+    rgba(32, 28, 69, 0.1) 100%
   );
   backdrop-filter: blur(0.1em);
   -webkit-backdrop-filter: blur(0.1em);
@@ -171,7 +177,7 @@ p {
   color: #e3e2e2;
   text-decoration: none;
   font-size: 1em;
-  padding: 8vh 11vh;
+  padding: 8vh 10vh;
 }
 
 .topbar li a:hover {
@@ -197,9 +203,9 @@ p {
   display: block;
   list-style: none;
 }
-/* für zurück in den Projektansichten */
+/* für zurück von Projektdetails in die Projektansichten */
 .back {
-  display: inline-block;
+  display: block;
   list-style: none;
   text-decoration: none;
   text-align: center;

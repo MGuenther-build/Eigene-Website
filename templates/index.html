@@ -4,9 +4,10 @@
 <html lang="de">
 <head>
     <link rel="icon" href="{{ url_for('static', filename='Favicon.png') }}" type="image/png">
+    <link rel="preload" href="{{ url_for('static', filename='Logo.png') }}" as="image">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}MGuenther-dev{% endblock %}</title>
+    <title>{% block title %}MGuenther-build{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='pics.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>

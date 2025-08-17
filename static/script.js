@@ -17,7 +17,6 @@ document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 window.addEventListener("DOMContentLoaded", () => {
     const mainWrapper = document.querySelector(".main-wrapper");
     requestAnimationFrame(() => {
-        mainWrapper.classList.remove("invisible");
         mainWrapper.classList.remove("visible");
     });
 
