@@ -5,7 +5,7 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         entry.target.classList.add("visible");
-      }, 100); // Verzögerung in ms
+      }, 200); // Verzögerung in ms
     }
   });
 });

@@ -1,7 +1,7 @@
 
 .home-icon {
-  width: 3em; /* Containerweite */
   display: block;
+  margin-right: 1.5em;
 }
 .icon {
   width: 3em;
@@ -32,8 +32,8 @@
   }
 }
 .portrait-zoom {
-  max-width: 17em;
+  max-width: 15em;
   height: auto;
-  animation: PicZoom 3.5s ease forwards;
+  animation: PicZoom 4.0s ease-in;
   transform-origin: 0% 50%;
 }
