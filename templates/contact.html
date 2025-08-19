@@ -8,28 +8,29 @@
 <section id="kontakt" class="contact-form">
     <h2>Kontakt</h2>
     <form id="KontaktID" action="#" method="post">
-        <label for="betreff">Betreff</label>
-        <input type="text" id="betreff" name="betreff" required>
+        <div class="contact-names">
+            <div>
+                <label for="vorname">Vorname</label>
+                <input type="text" id="vorname" name="vorname" required>
+            </div>
+            <div>
+                <label for="nachname">Nachname</label>
+                <input type="text" id="nachname" name="nachname" required>
+            </div>
+        </div>
 
-        <label for="thema">Wählen Sie ein Thema</label>
-        <select id="thema" name="thema" required>
-            <option value="anfrage">Allgemeine Anfrage</option>
-            <option value="feedback">Feedback</option>
-            <option value="support">Support-Anfrage</option>
-            <option value="sonstiges">Sonstiges</option>
-        </select>
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" required>
 
         <label style="margin-bottom: 0.175em;" for="nachricht">Nachricht</label>
-        <div id="zeichenzaehler" style="margin-bottom: 0.75em; font-size: 0.8em; font-weight: 300; color: #c0c1f3;"></div>
+        <div id="zeichenzaehler" style="margin-bottom: 0.75em; font-size: 0.75em;"></div>
         <textarea id="nachricht" name="nachricht" rows="12" required></textarea>
 
         <button type="submit" id="sendButtonAnimation">Absenden</button>
     </form>
 </section>
 
-
-
-<!-- für grünen gesendet Button -->
+<!-- Scripte bleiben unverändert -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById("KontaktID");
@@ -48,14 +49,13 @@
                     button.classList.add("sent");
                     button.textContent = "Gesendet";
                     button.disabled = true;
-            } else {
+                } else {
                     button.textContent = "Fehler!";
                     button.style.backgroundColor = "rgba(186, 45, 45, 0.85)";
-                    }
+                }
             });
         });
 
-        /* für Zurücksetzen gesendet Button, wenn Nachrichtfeld geleert */
         const textarea = document.getElementById("nachricht");
         textarea.addEventListener("input", function () {
             const isEmpty = textarea.value.trim() === "";
@@ -66,7 +66,6 @@
             }
         });
 
-        /* Formular leeren beim Verlassen der Seite */
         window.addEventListener("beforeunload", function () {
             form.reset();
             button.classList.remove("sent");
@@ -76,9 +75,6 @@
     });
 </script>
 
-
-
-<!-- für maximale Anzahl Wörter (andere Teil in Backend!) -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const maxZeichen = {{ max_Zeichen }};
@@ -94,12 +90,12 @@
                 counter.textContent = "keine Zeichen mehr übrig";
                 counter.style.color = "#ed3030";
             } else {
-                counter.textContent = `= ${remaining} Zeichen verbleibend`;
+                counter.textContent = `${remaining} Zeichen verbleibend`;
                 if (remaining >= 1 && remaining < 50) {
-                    counter.textContent = `= noch ${remaining} Zeichen`;
+                    counter.textContent = `noch ${remaining} Zeichen`;
                     counter.style.color = "#d52f2f";
                 } else {
-                    counter.style.color = "#9f5df0";
+                    counter.style.color = "#f6f2f2";
                 }
             }
         }
@@ -107,5 +103,4 @@
         updateCounter();
     });
 </script>
-
 {% endblock %}

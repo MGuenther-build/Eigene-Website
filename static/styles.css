@@ -83,7 +83,7 @@ p {
   }
 }
 .zoom-in {
-  animation: ZoomZoom 3.0s ease-out forwards;
+  animation: ZoomZoom 3.5s ease-out forwards;
 }
 
 
@@ -149,7 +149,7 @@ p {
 
 .topbar {
   position: static;
-  margin: 2vh;
+  margin: 2vh 0 2vh 4vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,12 +157,12 @@ p {
     to right,
     rgba(114, 104, 225, 0.15) 0%,
     rgba(224, 208, 208, 0.2) 25%,
-    rgba(132, 120, 120, 0.2) 80%,
+    rgba(132, 120, 120, 0.25) 80%,
     rgba(45, 40, 90, 0.1) 100%
   );
   backdrop-filter: blur(0.1em);
   -webkit-backdrop-filter: blur(0.1em);
-  border-radius: 0.2em;
+  border-radius: 0.5em;
   height: 8vh !important;
   overflow: hidden;
 }
@@ -177,7 +177,7 @@ p {
   color: #e3e2e2;
   text-decoration: none;
   font-size: 1em;
-  padding: 9vh;
+  padding: 8vh;
 }
 
 .topbar li a:hover {
@@ -201,6 +201,7 @@ p {
 /* für die Reiter in der Topbar (außer Startseiten-Icon) in der index.html */
 .menu {
   justify-content: center;
+  align-items: center;
   list-style: none;
 }
 /* für zurück von Projektdetails in die Projektansichten */
@@ -230,14 +231,14 @@ p {
 
 /*Design für Kontaktformular*/
 .contact-form {
-  background-color: rgba(94, 10, 10, 0.15);
+  background-color: rgba(66, 7, 7, 0.1);
   border-radius: 0.5em;
   box-shadow: 0.25em 0.5em 2em 1.5em rgba(185, 201, 234, 0.2);
   width: 60%;
   margin: 9vh auto;
   padding-left: 1.25em;
   padding-right: 1.25em;
-  padding-bottom: 1.25em;
+  padding-bottom: 1.5em;
 }
 
 .contact-form:hover {
@@ -246,7 +247,8 @@ p {
 
 .contact-form h2 {
   font-size: 2em;
-  margin-bottom: 0.925em;
+  margin-top: 0.7em;
+  margin-bottom: 1em;
   color: #ffffff;
 }
 
@@ -273,7 +275,7 @@ p {
   background-color: rgba(126, 60, 206, 0.8);
   color: #ffffff;
   border: none;
-  padding: 0.625em 1.25em;
+  padding: 0.65em 1.25em;
   border-radius: 0.25em;
   cursor: pointer;
   font-size: 0.95em;
@@ -297,6 +299,18 @@ p {
   content: " ✓";
   font-weight: bold;
 }
+
+.contact-names {
+    display: flex;
+    gap: 1em;
+}
+.contact-names div {
+    flex: 1;
+}
+.contact-names input {
+    width: 100%;
+}
+
 
 
 
@@ -516,8 +530,8 @@ p {
     130deg,
     rgba(0, 0, 0, 0.2),
     rgba(186, 45, 45, 0.2),
-    rgba(0, 0, 0, 0.1),
-    rgba(164, 107, 175, 0.2),
+    rgba(0, 0, 0, 0.2),
+    rgba(108, 107, 175, 0.15),
     rgba(0, 0, 0, 0.1)
   );
   border-radius: 0.5em;
@@ -585,4 +599,21 @@ p {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+
+
+.trennstrich-links {
+  border-top: 0.1em solid rgba(186, 45, 45, 0.4);
+  margin: auto;
+  padding-top: 0.2em;
+  border-radius: 50%;
+  width: 55%;
+}
+.trennstrich-rechts {
+  border-top: 0.1em solid rgba(53, 50, 241, 0.5);
+  margin: auto;
+  padding-top: 0.2em;
+  border-radius: 50%;
+  width: 55%;
 }

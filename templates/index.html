@@ -1,7 +1,7 @@
 
 <!-- index.html - für Layout, Sidebar und Navigation aller Seiten -->
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" style="background-color: #0a0a1a);">
 <head>
     <link rel="icon" href="{{ url_for('static', filename='Favicon.png') }}" type="image/png">
     <link rel="preload" href="{{ url_for('static', filename='Logo.png') }}" as="image">
@@ -32,7 +32,7 @@
             <li><a href="{{ url_for('portfolio') }}" class="{% if active_page == 'portfolio' %}active current{% endif %}">Portfolio</a></li>
             <li><a href="{{ url_for('impressum') }}" class="{% if active_page == 'impressum' %}active current{% endif %}">Impressum</a></li>
             <li><a href="https://github.com/MGuenther-build" target="_blank" title="mein Github-Account">
-                <span>&#9112; Github</span></a>
+                <span class="github-icon">&#9112; Github</span></a>
             </li>
         </ul>
     </nav>

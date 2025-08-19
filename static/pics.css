@@ -1,17 +1,23 @@
 
 .home-icon {
   display: block;
-  margin-right: 1.5em;
+  margin-right: 1.2em;
+  margin-left: 2.0em;
 }
 .icon {
-  width: 3em;
-  height: auto;
+  width: 2.8em;
+  height: 2.8em;
   display: block;
 }
 .icon:active {
   transform: scale(0.88);
 }
 
+
+.github-icon {
+  vertical-align: baseline;
+  line-height: 1;
+}
 
 
 @keyframes PicZoom {
