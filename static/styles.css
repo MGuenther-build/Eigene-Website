@@ -46,9 +46,8 @@ body {
 }
 
 p {
-  font-size: 1em;
+  font-size: clamp(1.0rem, 1.1vw, 1.2rem);
   color: white;
-  text-shadow: 0.06em 0.08em rgba(93, 22, 137, 0.9);
   line-height: 1.5;
   font-weight: 300;
 }
@@ -73,7 +72,7 @@ p {
     transform: scale(0.0);
     opacity: 0;
   }
-  75% {
+  66% {
     transform: scale(1.2);
     opacity: 1;
   }
@@ -83,12 +82,12 @@ p {
   }
 }
 .zoom-in {
-  animation: ZoomZoom 3.5s ease-out forwards;
+  animation: ZoomZoom 3.0s ease-out forwards;
 }
 
 
 
-/* Zoom Effekt Start Seite 2/About Seite 1 und Seite 2(aber nur H1) */
+/* Zoom Effekt Start Seite 2/About Seite 1 und Seite 2 (nur H1) */
 @keyframes ZoomZoom2 {
   0% {
     transform: scale(0.0);
@@ -116,8 +115,8 @@ p {
     opacity: 0;
   }
   40% {
-    transform: scale(0.3);
-    opacity: 0.3;
+    transform: scale(0.0);
+    opacity: 0.0;
   }
   100% {
     transform: scale(1);
@@ -125,7 +124,7 @@ p {
   }
 }
 .zoom-in-slowed {
-  animation: ZoomZoom3 4.0s ease-out forwards;
+  animation: ZoomZoom3 6.0s ease-out;
 }
 
 
@@ -518,7 +517,7 @@ p {
 .swiper.HomeSwiper {
   display: flex;
   position: relative;
-  width: 70%;
+  width: auto;
   height: 70vh;
   overflow: hidden;
   margin: 0 auto;
@@ -539,22 +538,20 @@ p {
 .swiper-wrapper.HomeWrapper {
   display: flex;
   position: relative;
-  border-radius: 0.25em;
-  width: 100%;
-  height: 100%;
   transition-property: transform;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 .swiper-slide.HomeSlide {
   display: flex;
   flex-shrink: 0;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 1.15vw, 1.4rem);
   width: 100%;
   height: 100%;
   position: relative;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  overflow-y: auto;
 }
 
 
@@ -563,9 +560,8 @@ p {
 .swiper.AboutSwiper {
   display: flex;
   position: relative;
-  width: 70%;
+  width: auto;
   height: 70vh;
-  overflow: hidden;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -579,27 +575,35 @@ p {
     rgba(0, 0, 0, 0.1)
   );
   border-radius: 0.5em;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 .swiper-wrapper.AboutWrapper {
-  display: flex;
   position: relative;
-  border-radius: 0.25em;
-  width: 100%;
-  height: 100%;
   transition-property: transform;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 .swiper-slide.AboutSlide {
   display: flex;
   flex-shrink: 0;
-  font-size: 1.2em;
-  width: 100%;
+  font-size: clamp(1rem, 1.15vw, 1.4rem);
+  max-width: 100%;
   height: 100%;
   position: relative;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
+  overflow-y: auto;
 }
+.about-center {
+  height: 100%;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+}
+
 
 
 

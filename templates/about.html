@@ -13,56 +13,72 @@
 <div class="swiper AboutSwiper">
     <div class="swiper-wrapper AboutWrapper" style="font-family: 'Agency FB'; font-weight: bold;">
         <div class="swiper-slide AboutSlide">
+            <div class="about-center">
 
-            <h1 class="zoom-in-cutted" style="
-                text-align: center;
-                color: rgba(236, 236, 236);
-                font-weight: bold;
-                font-size: 3em;
-                text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
-                                0 0 0.2em rgba(167, 90, 214, 0.3),
-                                0 0 0.2em rgba(127, 32, 229, 0.2),
-                                0 0 0.2em rgba(97, 13, 170, 0.6);">
-                About me
-            </h1>
+                <h1 class="zoom-in-cutted" style="
+                    text-align: center;
+                    color: rgba(236, 236, 236);
+                    font-weight: bold;
+                    font-size: clamp(3.5rem, 3.8vw, 4.5rem);
+                    text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
+                                    0 0 0.2em rgba(167, 90, 214, 0.3),
+                                    0 0 0.2em rgba(127, 32, 229, 0.2),
+                                    0 0 0.2em rgba(97, 13, 170, 0.6);">
+                    About me
+                </h1>
 
-
-            <img src="{{ url_for('static', filename='photo.png') }}"
-            style="background: linear-gradient(
-                to right,
-                rgba(237, 22, 22, 0.1) 0%,
-                rgba(48, 4, 4, 0.1) 10%,
-                rgba(0, 0, 0, 0.15) 33%,
-                rgba(28, 1, 33, 0.2) 66%,
-                rgba(53, 6, 61, 0.25) 100%
-                );
-                box-shadow: 1.25em 0 2.5em rgba(110, 158, 224, 0.4);
-                border-radius: 50%;
-                margin-left: 2.25em;
-                padding: 0.65em;
-                "
-            class="portrait-zoom"
-            alt="Portraitbild"/>
+                <img src="{{ url_for('static', filename='photo.png') }}"
+                style="background: linear-gradient(
+                    to right,
+                    rgba(50, 48, 48, 0.15) 0%,
+                    rgba(85, 6, 6, 0.1) 10%,
+                    rgba(28, 1, 33, 0.15) 66%,
+                    rgba(53, 6, 61, 0.15) 100%
+                    );
+                    box-shadow: 1.25em 0 2.5em rgba(110, 158, 224, 0.4);
+                    border-radius: 50%;
+                    margin-left: 2.25em;
+                    padding: 0.65em;
+                    "
+                class="portrait-zoom"
+                alt="Portraitbild"/>
+            </div>
         </div>
 
         <div class="swiper-slide AboutSlide">
             <div class="zoom-in-cutted">
-                <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <div style="display: block;">
                     <h1 style="
-                        margin: 0;
                         color: rgba(236, 236, 236);
                         font-weight: bold;
-                        font-size: 2em;
+                        font-size: clamp(2.5rem, 2.8vw, 3.5rem);
+                        padding-top: 0.2em;
+                        padding-bottom: 0.2em;
                         text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
                                         0 0 0.2em rgba(167, 90, 214, 0.3),
                                         0 0 0.2em rgba(127, 32, 229, 0.2),
                                         0 0 0.25em rgba(97, 13, 170, 0.9);">
-                        Das Leben ist ein Meer
+                        Hi!
                     </h1>
-                </div>
-                <div>
-                    <p class="zoom-in-slowed" style>
-                        aaaegfhfggggdfmgkglklgeglngjggkgk<br>wlfkergmgigeritueeijfighrigsicns<br>ajfw95u493ueuhKSKSKACNAK
+                    <p class="zoom-in-slowed">
+                        Ich bin Martin, ein junggebliebener Softwareentwickler in Ausbildung.<br>
+                        <div style="height: 0.1em;"></div>
+                    <p class="zoom-in-slowed">
+                        Zugegeben, ich weiß nicht alles und mehr Talent im Programmieren besitzen ganz sicher andere Menschen.<br>
+                        Aber Softwareentwicklung ist mehr als nur Talent und Programmieren, es ist auch der Wille, aus der<br>
+                        ersten Idee über alle Schwierigkeiten hinweg etwas Logisches und Brauchbares zu entwickeln.<br>
+                        <div style="height: 0.1em;"></div>
+                    <p class="zoom-in-slowed">
+                        Dem fehlenden Naturtalent halte ich Ausdauer, Lernbereitschaft und Neugier entgegen!<br>
+                        Ich hänge mich immer rein, gebe nicht auf und erarbeite selbstständig Lösungen.<br>
+                        <div style="height: 0.1em;"></div>
+                    <p class="zoom-in-slowed">
+                        Ich liebe es mich in Projekte zu verbeißen, Strukturen verstehen zu lernen, Probleme anzugehen<br>
+                        und Lösungen zu finden, die funktionieren, wirtschaftlich und benutzerfreundlich sind.
+                        <div style="height: 0.1em;"></div>
+                    <p class="zoom-in-slowed">
+                        Mein Ziel ist es ein Softwareentwickler zu sein, der alle an ihn gestellten Anforderungen<br>
+                        gewissenhaft und selbstständig lösen kann - im Team und solo.
                     </p>
                 </div>
             </div>

@@ -9,6 +9,10 @@
   height: 2.8em;
   display: block;
 }
+.icon:hover {
+  transform: scale(1.04);
+  transition-duration: 0.15s;
+}
 .icon:active {
   transform: scale(0.88);
 }

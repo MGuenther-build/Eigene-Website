@@ -13,7 +13,7 @@
     color: rgba(227, 226, 226);
     font-family: 'Agency FB';
     font-weight: bold;
-    font-size: 2.9em;
+    font-size: clamp(2.5rem, 2.9vw, 3.5rem);
     text-shadow:    0 0 0.2em rgba(186, 45, 45, 0.9);"
     >
     Portfolio
@@ -26,7 +26,7 @@
         </a>
         <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec; padding-bottom:0.1em;">EurojackpotApp</h2>
         <div class="trennstrich-links"></div>
-        <p></span><a href="https://www.mguenther-build.de/EJApp.exe" class="software-link" title="App herunterladen">⬇️ Download (exe)</a>
+        <p style="font-size: clamp(0.8rem, 0.9vw, 1.1rem);"></span><a href="https://www.mguenther-build.de/EJApp.exe" class="software-link" title="App herunterladen">⬇️ Download (exe)</a>
         </p>
     </div>
 
@@ -36,32 +36,32 @@
         </a>
         <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec; padding-bottom:0.1em;">WetterApp</h2>
         <div class="trennstrich-rechts"></div>
-        <p></span><a href="https://www.mguenther-build.de/WetterApp" class="software-link" title="App im neuen Fenster öffnen" target="_blank">🌐 öffnen</a>
+        <p style="font-size: clamp(0.8rem, 0.9vw, 1.1rem);"></span><a href="https://www.mguenther-build.de/WetterApp" class="software-link" title="App im neuen Fenster öffnen" target="_blank">🌐 öffnen</a>
         </p>
     </div>
 
     <div class="card">
         <img src="{{ url_for('static', filename='JDD_Front.jpg') }}" alt="PostgreSQL-Dashboard">
         <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">PostgreSQL-Dashboard</a></h2>
-        <p>⬇️ Download (exe)</p>
+        <p style="font-size: clamp(0.8rem, 0.9vw, 1.1rem);">⬇️ Download (exe)</p>
     </div>
 
     <div class="card">
         <img src="{{ url_for('static', filename='SpielQuizApp.jpg') }}" alt="Spiel-Quiz-App">
         <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">Spiel-Quiz-App</a></h2>
-        <p>🌐 <s>als WebApp öffnen</s> &nbsp; | &nbsp; ⬇️ Download (exe)</p>
+        <p style="font-size: clamp(0.8rem, 0.9vw, 1.1rem);">🌐 <s>als WebApp öffnen</s> &nbsp; | &nbsp; ⬇️ Download (exe)</p>
     </div>
 
     <div class="card">
         <img src="{{ url_for('static', filename='projekt5.png') }}" alt="Projekt 5">
         <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">Hotel-Buchungssystem</a></h2>
-        <p>... in Arbeit</p>
+        <p style="font-size: clamp(0.8rem, 0.9vw, 1.1rem);">... in Arbeit</p>
     </div>
 
     <div class="card">
         <img src="{{ url_for('static', filename='Dark Chess (proto).jpg') }}" alt="Projekt 7">
         <h2 style="font-family: 'Agency FB'; font-weight: bold; color: #ececec;"><a href="#">No Kings Schach</a></h2>
-        <p>... in Planung</p>
+        <p style="font-size: clamp(0.8rem, 0.9vw, 1.1rem);">... in Planung</p>
     </div>
 </div>
 
