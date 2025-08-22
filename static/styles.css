@@ -62,22 +62,14 @@ p {
 
 
 
-/* Zoom Effekt Startseite Seite 1 */
+/* Zoom Effekt Startseite Seite 1 + About + Impressum Header*/
 @keyframes ZoomZoom {
   0% {
-    transform: scale(0.0);
+    filter: blur(10em);
     opacity: 0;
-  }
-  33% {
-    transform: scale(0.0);
-    opacity: 0;
-  }
-  66% {
-    transform: scale(1.2);
-    opacity: 1;
   }
   100% {
-    transform: scale(1.0);
+    filter: blur(0em);
     opacity: 1;
   }
 }
@@ -87,7 +79,7 @@ p {
 
 
 
-/* Zoom Effekt Start Seite 2/About Seite 1 und Seite 2 (nur H1) */
+/* Zoom Effekt Startseite Seite 2 + About Seite 2 (nur H1) */
 @keyframes ZoomZoom2 {
   0% {
     transform: scale(0.0);
@@ -111,20 +103,16 @@ p {
 /* Zoom Effekt About Seite 2 (p-Schrift) */
 @keyframes ZoomZoom3 {
   0% {
-    transform: scale(0.0);
+    filter: blur(10em);
     opacity: 0;
   }
-  40% {
-    transform: scale(0.0);
-    opacity: 0.0;
-  }
   100% {
-    transform: scale(1);
+    filter: blur(0em);
     opacity: 1;
   }
 }
 .zoom-in-slowed {
-  animation: ZoomZoom3 6.0s ease-out;
+  animation: ZoomZoom3 3.5s ease-in;
 }
 
 
@@ -135,13 +123,17 @@ p {
     transform: scale(0.0);
     opacity: 0;
   }
+  75% {
+    transform: scale(1.2);
+    opcacity: 1;
+  }
   100% {
     transform: scale(1);
     opacity: 1;
   }
 }
 .zoom-in-port {
-  animation: ZoomZoom4 3.0s ease-out forwards;
+  animation: ZoomZoom4 3.5s ease-out forwards;
 }
 
 
@@ -230,7 +222,7 @@ p {
 
 /*Design für Kontaktformular*/
 .contact-form {
-  background-color: rgba(66, 7, 7, 0.1);
+  background-color: rgba(108, 12, 12, 0.1);
   border-radius: 0.5em;
   box-shadow: 0.25em 0.5em 2em 1.5em rgba(185, 201, 234, 0.2);
   width: 60%;
@@ -527,11 +519,11 @@ p {
   margin-top: 6vh;
   background: linear-gradient(
     130deg,
-    rgba(0, 0, 0, 0.2),
-    rgba(186, 45, 45, 0.2),
-    rgba(0, 0, 0, 0.2),
-    rgba(108, 107, 175, 0.15),
-    rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.25),
+    rgba(186, 45, 45, 0.25),
+    rgba(0, 0, 0, 0.25),
+    rgba(108, 107, 175, 0.2),
+    rgba(0, 0, 0, 0.15)
   );
   border-radius: 0.5em;
 }

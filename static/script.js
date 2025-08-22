@@ -1,11 +1,11 @@
 
-// Für Fade-in
+// Für Fade-in in den Viewport
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         entry.target.classList.add("visible");
-      }, 200); // Verzögerung in ms
+      }, 50); // Verzögerung in ms
     }
   });
 });
