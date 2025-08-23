@@ -1,7 +1,7 @@
 
 <!-- index.html - für Layout, Sidebar und Navigation aller Seiten -->
 <!DOCTYPE html>
-<html lang="de" style="background-color: #0a0a1a);">
+<html lang="de" style="background-color: #0a0a1a;">
 <head>
     <link rel="icon" href="{{ url_for('static', filename='Favicon.png') }}" type="image/png">
     {% if layout_mode != 'minimal' %}
@@ -16,12 +16,11 @@
 </head>
 <body>
     {% if layout_mode != 'minimal' %}
-
-    {% if request.args.get('fadein') %}
-        <nav id="topbar" class="topbar fade-in">
+        {% if request.args.get('fadein') %}
+            <nav id="topbar" class="topbar fade-in">
         {% else %}
-        <nav id="topbar" class="topbar">
-    {% endif %}
+            <nav id="topbar" class="topbar">
+        {% endif %}
 
         <div class="home-icon">
             <a href="{{ url_for('home') }}">
