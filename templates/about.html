@@ -13,7 +13,7 @@
 <div class="swiper AboutSwiper">
     <div class="swiper-wrapper AboutWrapper" style="font-family: 'Agency FB'; font-weight: bold;">
         <div class="swiper-slide AboutSlide">
-            <div class="about-center">
+            <div class="nebeneinander">
 
                 <h1 class="zoom-in" style="
                     text-align: center;
@@ -83,8 +83,47 @@
                 </div>
             </div>
         </div>
+
+        <div class="swiper-slide AboutSlide">
+            <div class="zoom-in-cutted">
+                <div style="display: block;">
+                    <h1 style="
+                        color: rgba(236, 236, 236);
+                        font-weight: bold;
+                        font-size: clamp(2.0rem, 2.5vw, 3.0rem);
+                        padding-top: 0.2em;
+                        padding-bottom: 0.2em;
+                        text-shadow:    0 0 0.2em rgba(164, 41, 230, 0.3),
+                                        0 0 0.2em rgba(167, 90, 214, 0.3),
+                                        0 0 0.2em rgba(127, 32, 229, 0.2),
+                                        0 0 0.25em rgba(97, 13, 170, 0.9);">
+                        Was ich kenne
+                    </h1>
+                    <div class="nebeneinander">
+                        <p class="zoom-in-slowed">
+                            <img src="{{ url_for('static', filename='Azure.png') }}" class="zertifikat" style="margin-right: 2em;" alt="Azure Zertifikat" title="Klicken zum Vergrößern" onclick="openModal(this.src)">
+                            <img src="{{ url_for('static', filename='PCEP.png') }}" class="zertifikat" alt="PCEP Zertifikat" title="Klicken zum Vergrößern" onclick="openModal(this.src)">    
+                        </p>
+                    </div>
+                    <div style="height: 0.1em;"></div>
+                    <p class="zoom-in-slowed">
+                        Zugegeben, ich weiß nicht alles und mehr Talent im Programmieren besitzen ganz sicher andere Menschen.<br>
+                        Aber Softwareentwicklung ist mehr als nur Talent und Programmieren, es ist auch der Wille, aus der<br>
+                        ersten Idee über alle Schwierigkeiten hinweg etwas Logisches und Brauchbares zu entwickeln.<br>
+                        <div style="height: 0.1em;"></div>
+                    <p class="zoom-in-slowed">
+                        Dem fehlenden Naturtalent halte ich Ausdauer, Lernbereitschaft und Neugier entgegen!<br>
+                        Ich hänge mich immer rein, gebe nicht auf und erarbeite selbstständig Lösungen.<br>
+                        <div style="height: 0.1em;"></div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="swiper-pagination"></div>
+</div>
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImage">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -102,6 +141,15 @@
         },
     });
 
+    // Neu-Triggerung des zoom-in
+    swiper.on('slideChangeTransitionStart', () => {
+        document.querySelectorAll('.zoom-in').forEach(el => {
+            el.classList.remove('zoom-in');
+            void el.offsetWidth;
+            el.classList.add('zoom-in');
+        });
+    });
+    
     // Neu-Triggerung des zoom-in-cutted
     swiper.on('slideChangeTransitionStart', () => {
         document.querySelectorAll('.zoom-in-cutted').forEach(el => {
@@ -131,6 +179,10 @@
 
     // Nur Pfeiltasten links/rechts für swipe
     window.addEventListener('keydown', (e) => {
+        const modal = document.getElementById("imageModal");
+        // Deaktivieren, wenn Modal sichtbar ist
+        if (modal.style.display === "flex")
+            return;
         if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
             if (e.key === 'ArrowLeft') {
                 swiper.slidePrev();
@@ -139,5 +191,35 @@
             }
         }
     });
+
+    // Für Modalfensterlogik
+    function openModal(src) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+
+        modal.style.display = "flex";
+        modalImg.src = src;
+
+        // Seite blockieren bei geöffneten Modalfenster
+        document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("imageModal");
+        const modalContent = modal.querySelector('.modal-content');
+
+        modal.classList.add('hide');
+        modalContent.classList.add('hide');
+
+        // Seite wieder entsperren
+        document.body.classList.remove('modal-open');
+
+        setTimeout(() => {
+            modal.style.display = "none";
+            modal.classList.remove('hide');
+            modalContent.classList.remove('hide');
+        }, 1000);
+    }
+
 </script>
 {% endblock %}

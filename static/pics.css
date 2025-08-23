@@ -44,6 +44,21 @@
 .portrait-zoom {
   max-width: 15em;
   height: auto;
-  animation: PicZoom 4.0s ease-in;
+  animation: PicZoom 3.5s ease-in;
   transform-origin: 0% 50%;
+}
+
+
+.zertifikat {
+  height: 20vh;
+  width: auto;
+  object-fit: cover;
+  border-width: 0.5em;
+  border-style: ridge;
+  border-color: rgba(72, 18, 137, 0.8);
+  border-radius: 10%;
+  transition: transform 1.0s ease;
+}
+.zertifikat:hover {
+  transform: scale(1.1);
 }
