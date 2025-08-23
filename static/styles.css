@@ -27,7 +27,7 @@ body {
 
 /* Container für den Hauptinhalt, umschließt main */
 .main-wrapper {
-  height: auto;
+  min-height: 88vh;
   box-sizing: border-box;
   opacity: 0;
   transition: opacity 1.5s ease-in;
@@ -75,7 +75,7 @@ p {
   }
 }
 .zoom-in {
-  animation: ZoomZoom 3.0s ease-out forwards;
+  animation: ZoomZoom 2.5s ease-out forwards;
 }
 
 
@@ -113,7 +113,7 @@ p {
   }
 }
 .zoom-in-slowed {
-  animation: ZoomZoom3 3.5s ease-in;
+  animation: ZoomZoom3 4.0s ease-in;
 }
 
 
