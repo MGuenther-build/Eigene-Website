@@ -36,9 +36,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // Fade-out aktivieren
         mainWrapper.classList.remove("visible");
-        mainWrapper.classList.add("invisible");
-
-        // Nach Timeout zur neuen Seite wechseln
         setTimeout(() => {
           window.location.href = target;
         }, 1600); // Zeit muss zum CSS passen + etwas Puffer

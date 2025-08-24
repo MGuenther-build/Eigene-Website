@@ -4,6 +4,8 @@ html {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  background: url('../static/Wallpaper.webp') no-repeat center center fixed;
+  background-size: 100% 100%;
 }
 
 /* verhindert Anklickbarkeit aktiver Seite */

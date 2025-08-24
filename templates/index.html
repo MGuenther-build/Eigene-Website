@@ -1,9 +1,9 @@
 
 <!-- index.html - für Layout, Sidebar und Navigation aller Seiten -->
 <!DOCTYPE html>
-<html lang="de" style="background-color: #0a0a1a;">
 <head>
     <link rel="icon" href="{{ url_for('static', filename='Favicon.png') }}" type="image/png">
+    <link rel="preload" href="{{ url_for('static', filename='Wallpaper.webp') }}" as="image">
     {% if layout_mode != 'minimal' %}
     <link rel="preload" href="{{ url_for('static', filename='Logo.png') }}" as="image">
     {% endif %}
