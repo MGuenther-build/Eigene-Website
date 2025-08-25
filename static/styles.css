@@ -2,6 +2,7 @@
 html {
   height: 100%;
   width: 100%;
+  scrollbar-gutter: stable;
   overflow-y: scroll;
   overflow-x: hidden;
   background: url('../static/Wallpaper.webp') no-repeat center center fixed;
@@ -18,7 +19,7 @@ body {
   display: flex;
   min-height: 100vh;
   margin: 0;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow';
   color: #ececec;
   background: url('../static/Wallpaper.webp') no-repeat center center fixed;
   background-size: 100% 100%;
@@ -49,10 +50,10 @@ body {
 }
 
 p {
-  font-size: clamp(1.0rem, 1.1vw, 1.2rem);
+  font-size: clamp(1.0rem, 1.1vw, 1.3rem);
   color: white;
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .software-link {
@@ -202,9 +203,9 @@ p {
   list-style: none;
   text-decoration: none;
   text-align: center;
-  font-family: "Agency FB";
+  font-family: "PathwayGothicOne";
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 2.0rem;
   margin-top: 2vh;
   margin-bottom: 3vh;
   color: #ececec;
@@ -227,7 +228,7 @@ p {
   border-radius: 0.5em;
   box-shadow: 0.25em 0.5em 2em 1.5em rgba(185, 201, 234, 0.2);
   width: 60%;
-  margin: 9vh auto;
+  margin: 8.3vh auto;
   padding-left: 1.25em;
   padding-right: 1.25em;
   padding-bottom: 1.5em;
@@ -255,12 +256,13 @@ p {
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-  padding: 0.9em;
+  padding: 0.5rem;
   margin-bottom: 1.5em;
   background-color: #e8e8e8;
   border: 0.1em solid #ffffff;
   border-radius: 0.25em;
   box-sizing: border-box;
+  font-family: 'PathwayGothicOne';
 }
 
 .contact-form button {
@@ -398,7 +400,7 @@ p {
 }
 .EJApp-p {
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 .slideshow-WApp {
@@ -408,7 +410,7 @@ p {
 }
 .WApp-p {
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 
@@ -695,4 +697,15 @@ body.modal-open {
   padding-top: 0.2em;
   border-radius: 50%;
   width: 55%;
+}
+
+
+
+@font-face {
+    font-family: 'Freeman';
+    src: url('Fonts/Freeman.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'PathwayGothicOne';
+    src: url('Fonts/PathwayGothicOne.woff2') format('woff2');
 }
